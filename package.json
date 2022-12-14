@@ -1,0 +1,41 @@
+{
+  "name": "@rauschma/set-methods-polyfill",
+  "description": "A polyfill for the ECMAScript proposal “Set Methods for JavaScript”",
+  "version": "0.1.0",
+  "author": "Axel Rauschmayer",
+  "keywords": [
+    "javascript",
+    "typescript",
+    "iteration",
+    "iterator"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rauschma/set-methods-polyfill.git"
+  },
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    ".": "./dist/library.js",
+    "./install": "./dist/install.js"
+  },
+  "scripts": {
+    "test": "node --test",
+    "testall": "node --test dist/*_test.js",
+    "dry": "npm publish --dry-run",
+    "prepublishOnly": "npm run clean && npm run build",
+    "build": "tsc",
+    "watch": "tsc --watch",
+    "clean": "shx rm -rf ./dist"
+  },
+  "// devDependencies": {
+    "@types/node": "needed for the unit tests (which use Node’s built-in test runner)",
+    "shx": "used by the scripts",
+    "typescript": "needed for `npm publish`"
+  },
+  "devDependencies": {
+    "@types/node": "^18.11.12",
+    "shx": "^0.3.4",
+    "typescript": "^4.9.4"
+  }
+}
